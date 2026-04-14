@@ -1,0 +1,15 @@
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. square-root.
+       DATA DIVISION.
+       WORKING-STORAGE SECTION.
+       01 WS-NUMBER     PIC 9(32).
+       01 WS-KWADRAAT   PIC 9(32).
+       01 WS-SQRT       PIC 9(32).
+
+       PROCEDURE DIVISION.
+       SQUARE-ROOT.
+           MOVE 0 TO WS-SQRT.
+           PERFORM UNTIL WS-KWADRAAT = WS-NUMBER
+               ADD 1 TO WS-SQRT
+               COMPUTE WS-KWADRAAT = WS-SQRT * WS-SQRT
+           END-PERFORM.
