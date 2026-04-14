@@ -1,0 +1,58 @@
+// @ts-check
+
+/**
+ * Calculates the sum of the two input arrays.
+ *
+ * @param {number[]} array1
+ * @param {number[]} array2
+ * @returns {number} sum of the two arrays
+ */
+export function twoSum(array1, array2) {
+  return Number(array1.join('')) + Number(array2.join(''))
+}
+
+/**
+ * Checks whether a number is a palindrome.
+ *
+ * @param {number} value
+ * @returns {boolean} whether the number is a palindrome or not
+ */
+export function luckyNumber(value) {
+  let tekst = String(value);
+  let iStart = 0;
+  let iEnd = tekst.length - 1;
+  while (iStart < iEnd) {
+    if (tekst[iStart] !== tekst[iEnd]) {
+      return false;
+    }
+    iStart++;
+    iEnd--;
+  }
+  return true;
+}
+
+/**
+ * Determines the error message that should be shown to the user
+ * for the given input value.
+ *
+ * @param {string|null|undefined} input
+ * @returns {string} error message
+ */
+export function errorMessage(input) {
+  const INPUT_OK = '';
+
+  if (isEmpty(input)) {
+    return 'Required field';
+  }
+
+  let n = Number(input);
+  if (isNaN(n) || n === 0) {
+    return 'Must be a number besides 0';
+  }
+
+  return INPUT_OK;
+}
+
+function isEmpty(str) {
+  return str === undefined || str === null || str === '';
+}
